@@ -13,5 +13,4 @@ title: Home
   
   <h2>Contact</h2>
   <p>Feel free to reach out: rhli.richardli@gmail.com | <a href="www.linkedin.com/in/richardhcli" target="_blank" rel="noopener"> www.linkedin.com/in/richardhcli </a> </p>
-  <a href="https://github.com/richardhcli" target="_blank" rel="noopener">GitHub</a>.
 </article>

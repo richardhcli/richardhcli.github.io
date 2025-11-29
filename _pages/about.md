@@ -16,6 +16,9 @@ permalink: /about/
   </ul>
   
   <h2>Contact</h2>
-  <p>Feel free to reach out through <a href="https://github.com/richardhcli" target="_blank" rel="noopener">GitHub</a>. I would love to chat!</p>
+    <p>Feel free to reach out: rhli.richardli@gmail.com | <a href="www.linkedin.com/in/richardhcli" target="_blank" rel="noopener"> www.linkedin.com/in/richardhcli </a>. I would love to chat!</p>
+  
+  <p><a href="https://github.com/richardhcli" target="_blank" rel="noopener">GitHub</a></p>
+  
   <p><a href="{{ '/assets/pdfs/Richard-Li_resume-11_29_2025.pdf' | relative_url }}" target="_blank" rel="noopener">View my resume (PDF)</a></p>
 </article>
