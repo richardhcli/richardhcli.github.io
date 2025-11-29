@@ -1,9 +1,9 @@
 # Site settings
-title: Richard H CLI Portfolio
+title: Richard Li Website
 description: A portfolio showcasing various projects
 baseurl: ""
 url: "https://richardhcli.github.io"
-author: Richard H CLI
+author: Richard Li
 
 # Build settings
 markdown: kramdown
