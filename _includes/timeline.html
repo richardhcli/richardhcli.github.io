@@ -4,8 +4,10 @@
     {% comment %}
       site.posts is automatically sorted by date, newest first (reverse chronological)
       This ensures latest posts appear at the top of the timeline
+      Posts tagged with "private" are excluded from display
     {% endcomment %}
     {% for post in site.posts %}
+    {% unless post.tags contains "private" %}
     <div class="timeline-item" data-date="{{ post.date | date_to_xmlschema }}">
       <div class="timeline-marker"></div>
       <div class="timeline-content">
@@ -21,6 +23,7 @@
         {% endif %}
       </div>
     </div>
+    {% endunless %}
     {% endfor %}
   </div>
 </section>
