@@ -1,0 +1,36 @@
+# Site settings
+title: Richard H CLI Portfolio
+description: A portfolio showcasing various projects
+baseurl: ""
+url: "https://richardhcli.github.io"
+author: Richard H CLI
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - README.md
