@@ -6,7 +6,7 @@ tags:
   - Jekyll
   - GitHub Pages
   - Web Development
-github_url: "https://github.com/richardhcli/richardhcli.github.com"
+github_url: "https://github.com/richardhcli/richardhcli.github.io"
 ---
 
 ## Overview

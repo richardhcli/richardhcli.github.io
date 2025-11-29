@@ -179,10 +179,25 @@ img {
   position: relative;
   padding-bottom: 2.5rem;
   padding-left: 2rem;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .timeline-item:last-child {
   padding-bottom: 0;
+}
+
+.timeline-item-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Initial state for items already in viewport */
+.timeline-item:nth-child(1),
+.timeline-item:nth-child(2) {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .timeline-marker {
@@ -236,7 +251,8 @@ img {
 }
 
 /* Tags */
-.project-tags {
+.project-tags,
+.post-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
@@ -251,6 +267,12 @@ img {
   background: var(--primary-color);
   color: white;
   border-radius: 20px;
+  transition: transform var(--transition), background var(--transition);
+}
+
+.tag:hover {
+  transform: scale(1.05);
+  background: var(--primary-dark);
 }
 
 /* Buttons */
@@ -291,54 +313,65 @@ img {
   color: var(--text-color);
 }
 
-/* Project Page */
-.project-page {
+/* Project/Post Page */
+.project-page,
+.post-page {
   max-width: 800px;
   margin: 0 auto;
 }
 
-.project-header {
+.project-header,
+.post-header {
   margin-bottom: 2rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--border-color);
 }
 
-.project-header h1 {
+.project-header h1,
+.post-header h1 {
   margin: 0 0 0.5rem;
   font-size: 2.5rem;
 }
 
-.project-header time {
+.project-header time,
+.post-header time {
   color: var(--text-light);
 }
 
-.project-content {
+.project-content,
+.post-content {
   line-height: 1.8;
 }
 
-.project-content h2 {
+.project-content h2,
+.post-content h2 {
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
 
 .project-content ul,
-.project-content ol {
+.project-content ol,
+.post-content ul,
+.post-content ol {
   margin-bottom: 1.5rem;
   padding-left: 1.5rem;
 }
 
-.project-content li {
+.project-content li,
+.post-content li {
   margin-bottom: 0.5rem;
 }
 
-.project-content code {
+.project-content code,
+.post-content code {
   background: var(--bg-secondary);
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
   font-size: 0.9em;
 }
 
-.project-content pre {
+.project-content pre,
+.post-content pre {
   background: var(--text-color);
   color: var(--bg-color);
   padding: 1rem;
@@ -346,12 +379,14 @@ img {
   overflow-x: auto;
 }
 
-.project-content pre code {
+.project-content pre code,
+.post-content pre code {
   background: transparent;
   padding: 0;
 }
 
-.project-footer {
+.project-footer,
+.post-footer {
   margin-top: 3rem;
   padding-top: 2rem;
   border-top: 1px solid var(--border-color);

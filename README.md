@@ -1,2 +1,2 @@
-# richardhcli.github.com
+# richardhcli.github.io
 My personal portfolio website

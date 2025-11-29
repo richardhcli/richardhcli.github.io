@@ -11,17 +11,22 @@ highlighter: rouge
 
 # Collections
 collections:
-  projects:
+  pages:
     output: true
-    permalink: /projects/:name/
+    permalink: /:name/
 
 # Defaults
 defaults:
   - scope:
       path: ""
-      type: "projects"
+      type: "posts"
     values:
-      layout: "project"
+      layout: "post"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
 
 # Plugins
 plugins:

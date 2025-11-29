@@ -1,14 +1,14 @@
 ---
 layout: default
 ---
-<article class="project-page">
-  <header class="project-header">
+<article class="post-page">
+  <header class="post-header">
     <h1>{{ page.title }}</h1>
     {% if page.date %}
-    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %Y" }}</time>
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
     {% endif %}
     {% if page.tags %}
-    <div class="project-tags">
+    <div class="post-tags">
       {% for tag in page.tags %}
       <span class="tag">{{ tag }}</span>
       {% endfor %}
@@ -16,17 +16,17 @@ layout: default
     {% endif %}
   </header>
   
-  <div class="project-content">
+  <div class="post-content">
     {{ content }}
   </div>
   
-  <footer class="project-footer">
+  <footer class="post-footer">
     {% if page.github_url %}
     <a href="{{ page.github_url }}" class="btn" target="_blank" rel="noopener">View on GitHub</a>
     {% endif %}
     {% if page.demo_url %}
     <a href="{{ page.demo_url }}" class="btn btn-secondary" target="_blank" rel="noopener">Live Demo</a>
     {% endif %}
-    <a href="{{ '/' | relative_url }}" class="btn btn-back">← Back to Portfolio</a>
+    <a href="{{ '/log/' | relative_url }}" class="btn btn-back">← Back to Log</a>
   </footer>
 </article>
