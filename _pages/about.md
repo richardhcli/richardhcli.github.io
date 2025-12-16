@@ -22,5 +22,7 @@ permalink: /about/
   
   <p><a href="{{ '/assets/pdfs/Richard-Li_resume-11_29_2025.pdf' | relative_url }}" target="_blank" rel="noopener">View my resume (PDF)</a></p>
 
+  <br>
+  <h6> Debug: </h6>
   <p><a href="{{ '/debug.html' | relative_url }}">Debug page</a> for this website</p>
 </article>
