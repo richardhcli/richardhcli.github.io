@@ -3,6 +3,7 @@ title: "Portfolio Website"
 description: "A Jekyll-based portfolio website showcasing projects with a timeline view"
 date: 2025-11-29
 tags:
+  - project
   - Jekyll
   - GitHub Pages
   - Web Development

@@ -3,6 +3,7 @@ title: "Public shared wall"
 description: "publically hosted shared textfile"
 date: 2025-11-25
 tags:
+ - project
  - web development
 github_url: "https://github.com/richardhcli/JSON-storage-unit"
 demo_url: "https://pythingsrhl.pythonanywhere.com/"

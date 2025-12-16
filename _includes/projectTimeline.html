@@ -7,6 +7,7 @@
       Posts tagged with "private" are excluded from display
     {% endcomment %}
     {% for post in site.posts %}
+    {% if post.tags contains "project" %}
     {% unless post.tags contains "private" %}
     <div class="projectTimeline-item" data-date="{{ post.date | date_to_xmlschema }}">
       <div class="projectTimeline-marker"></div>
@@ -24,6 +25,7 @@
       </div>
     </div>
     {% endunless %}
+    {% endif %}
     {% endfor %}
   </div>
 </section>
