@@ -1,16 +1,16 @@
-<section id="posts" class="timeline-section">
-  <h2>Post Timeline</h2>
-  <div class="timeline">
+<section id="posts" class="projectTimeline-section">
+  <h2>Post Project Timeline</h2>
+  <div class="projectTimeline">
     {% comment %}
       site.posts is automatically sorted by date, newest first (reverse chronological)
-      This ensures latest posts appear at the top of the timeline
+      This ensures latest posts appear at the top of the projectTimeline
       Posts tagged with "private" are excluded from display
     {% endcomment %}
     {% for post in site.posts %}
     {% unless post.tags contains "private" %}
-    <div class="timeline-item" data-date="{{ post.date | date_to_xmlschema }}">
-      <div class="timeline-marker"></div>
-      <div class="timeline-content">
+    <div class="projectTimeline-item" data-date="{{ post.date | date_to_xmlschema }}">
+      <div class="projectTimeline-marker"></div>
+      <div class="projectTimeline-content">
         <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
         <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
         <p>{{ post.description }}</p>
@@ -29,11 +29,11 @@
 </section>
 
 <script>
-// Timeline enhancement script
+// Project Timeline enhancement script
 (function() {
   'use strict';
   
-  // Add scroll animation for timeline items
+  // Add scroll animation for projectTimeline items
   const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -100px 0px'
@@ -42,15 +42,15 @@
   const observer = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('timeline-item-visible');
+        entry.target.classList.add('projectTimeline-item-visible');
       }
     });
   }, observerOptions);
   
-  // Observe all timeline items
+  // Observe all projectTimeline items
   document.addEventListener('DOMContentLoaded', function() {
-    const timelineItems = document.querySelectorAll('.timeline-item');
-    timelineItems.forEach(item => {
+    const projectTimelineItems = document.querySelectorAll('.projectTimeline-item');
+    projectTimelineItems.forEach(item => {
       observer.observe(item);
     });
   });

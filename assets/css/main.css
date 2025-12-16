@@ -147,25 +147,25 @@ img {
   margin: 0 auto;
 }
 
-/* Timeline Styles */
-.timeline-section {
+/* Project Timeline Styles */
+.projectTimeline-section {
   padding: 3rem 0;
 }
 
-.timeline-section h2 {
+.projectTimeline-section h2 {
   font-size: 2rem;
   margin-bottom: 2rem;
   text-align: center;
 }
 
-.timeline {
+.projectTimeline {
   position: relative;
   max-width: 800px;
   margin: 0 auto;
   padding-left: 2rem;
 }
 
-.timeline::before {
+.projectTimeline::before {
   content: '';
   position: absolute;
   left: 0;
@@ -175,7 +175,7 @@ img {
   background: linear-gradient(to bottom, var(--timeline-color), var(--primary-dark));
 }
 
-.timeline-item {
+.projectTimeline-item {
   position: relative;
   padding-bottom: 2.5rem;
   padding-left: 2rem;
@@ -184,23 +184,23 @@ img {
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.timeline-item:last-child {
+.projectTimeline-item:last-child {
   padding-bottom: 0;
 }
 
-.timeline-item-visible {
+.projectTimeline-item-visible {
   opacity: 1;
   transform: translateX(0);
 }
 
 /* Initial state for items already in viewport */
-.timeline-item:nth-child(1),
-.timeline-item:nth-child(2) {
+.projectTimeline-item:nth-child(1),
+.projectTimeline-item:nth-child(2) {
   opacity: 1;
   transform: translateX(0);
 }
 
-.timeline-marker {
+.projectTimeline-marker {
   position: absolute;
   left: -2.5rem;
   top: 0;
@@ -212,7 +212,7 @@ img {
   box-shadow: 0 0 0 3px var(--timeline-color);
 }
 
-.timeline-content {
+.projectTimeline-content {
   background: var(--bg-secondary);
   padding: 1.5rem;
   border-radius: 8px;
@@ -220,32 +220,32 @@ img {
   transition: transform var(--transition), box-shadow var(--transition);
 }
 
-.timeline-content:hover {
+.projectTimeline-content:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
 }
 
-.timeline-content time {
+.projectTimeline-content time {
   display: inline-block;
   font-size: 0.875rem;
   color: var(--text-light);
   margin-bottom: 0.5rem;
 }
 
-.timeline-content h3 {
+.projectTimeline-content h3 {
   margin: 0 0 0.5rem;
   font-size: 1.25rem;
 }
 
-.timeline-content h3 a {
+.projectTimeline-content h3 a {
   color: var(--text-color);
 }
 
-.timeline-content h3 a:hover {
+.projectTimeline-content h3 a:hover {
   color: var(--primary-color);
 }
 
-.timeline-content p {
+.projectTimeline-content p {
   margin: 0 0 1rem;
   color: var(--text-light);
 }
@@ -475,15 +475,15 @@ img {
     padding: 1rem;
   }
 
-  .timeline {
+  .projectTimeline {
     padding-left: 1rem;
   }
 
-  .timeline-item {
+  .projectTimeline-item {
     padding-left: 1.5rem;
   }
 
-  .timeline-marker {
+  .projectTimeline-marker {
     left: -1.5rem;
     width: 10px;
     height: 10px;
