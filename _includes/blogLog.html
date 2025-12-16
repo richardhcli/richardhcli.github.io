@@ -4,7 +4,8 @@
     Latest posts appear first (reverse chronological)
   {% endcomment %}
   <ul class="blog-posts">
-    {% for post in site.blog_posts %}
+    {% assign sorted_posts = site.blog_posts | sort: 'date' | reverse %}
+    {% for post in sorted_posts %}
     <li class="blog-post-item">
       <div class="blog-post-header">
         <span class="blog-post-date">{{ post.date | date: "%b %d, %Y" }}</span>

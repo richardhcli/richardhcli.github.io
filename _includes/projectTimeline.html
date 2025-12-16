@@ -2,10 +2,11 @@
   <h2>Project Timeline</h2>
   <div class="projectTimeline">
     {% comment %}
-      site.project_posts is automatically sorted by date, newest first (reverse chronological)
-      This collection contains only project posts from the project/_posts/ directory
+      Sort project posts by date in reverse chronological order (newest first)
+      This collection contains only project posts from the _project_posts/ directory
     {% endcomment %}
-    {% for post in site.project_posts %}
+    {% assign sorted_posts = site.project_posts | sort: 'date' | reverse %}
+    {% for post in sorted_posts %}
     <div class="projectTimeline-item" data-date="{{ post.date | date_to_xmlschema }}">
       <div class="projectTimeline-marker"></div>
       <div class="projectTimeline-content">
