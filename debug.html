@@ -1,0 +1,29 @@
+---
+layout: default
+title: Debug Collections
+---
+
+<h1>Debug: Collections Info</h1>
+
+<h2>Project Posts Count: {{ site.project_posts | size }}</h2>
+<h3>Project Posts:</h3>
+<ul>
+{% for post in site.project_posts %}
+  <li>{{ post.title }} - {{ post.date }}</li>
+{% endfor %}
+</ul>
+
+<h2>Blog Posts Count: {{ site.blog_posts | size }}</h2>
+<h3>Blog Posts:</h3>
+<ul>
+{% for post in site.blog_posts %}
+  <li>{{ post.title }} - {{ post.date }}</li>
+{% endfor %}
+</ul>
+
+<h2>All Site Collections:</h2>
+<ul>
+{% for collection in site.collections %}
+  <li>{{ collection.label }} - {{ collection.docs | size }} documents</li>
+{% endfor %}
+</ul>
