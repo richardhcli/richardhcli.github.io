@@ -43,29 +43,6 @@ img {
   height: auto;
 }
 
-
-
-/* Hero Section */
-.hero {
-  text-align: center;
-  padding: 4rem 0;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: var(--text-color);
-}
-
-.hero p {
-  font-size: 1.25rem;
-  color: var(--text-light);
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-
-
 /* About Page */
 .about-page {
   max-width: 800px;
@@ -79,11 +56,5 @@ img {
 
 /* Responsive Design - General */
 @media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
+  /* General responsive styles */
 }

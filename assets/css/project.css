@@ -1,3 +1,22 @@
+/* Project Section Header */
+.project-section-header {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.project-section-header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.project-section-header p {
+  font-size: 1.25rem;
+  color: var(--text-light);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 /* Project Timeline Styles */
 .projectTimeline-section {
   padding: 3rem 0;
@@ -182,6 +201,14 @@
 
 /* Responsive Design - Projects */
 @media (max-width: 768px) {
+  .project-section-header h1 {
+    font-size: 2rem;
+  }
+
+  .project-section-header p {
+    font-size: 1rem;
+  }
+
   .projectTimeline {
     padding-left: 1rem;
   }
