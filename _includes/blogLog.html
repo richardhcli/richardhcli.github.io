@@ -1,12 +1,10 @@
 <section class="blog-log-list">
   {% comment %}
-    Filter posts by "blog" tag and display in condensed list format
+    Display blog posts from site.blog_posts collection in condensed list format
     Latest posts appear first (reverse chronological)
   {% endcomment %}
   <ul class="blog-posts">
-    {% for post in site.posts %}
-    {% if post.tags contains "blog" %}
-    {% unless post.tags contains "private" %}
+    {% for post in site.blog_posts %}
     <li class="blog-post-item">
       <div class="blog-post-header">
         <span class="blog-post-date">{{ post.date | date: "%b %d, %Y" }}</span>
@@ -23,8 +21,6 @@
       </div>
       {% endif %}
     </li>
-    {% endunless %}
-    {% endif %}
     {% endfor %}
   </ul>
 </section>

@@ -14,6 +14,12 @@ collections:
   pages:
     output: true
     permalink: /:name/
+  project_posts:
+    output: true
+    permalink: /projects/:name/
+  blog_posts:
+    output: true
+    permalink: /blog/:name/
 
 # Defaults
 defaults:
@@ -22,6 +28,16 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+  - scope:
+      path: "project/_posts"
+      type: "project_posts"
+    values:
+      layout: "projectPost"
+  - scope:
+      path: "blog/_posts"
+      type: "blog_posts"
+    values:
+      layout: "blogPost"
   - scope:
       path: ""
       type: "pages"

@@ -1,14 +1,11 @@
 <section id="posts" class="projectTimeline-section">
-  <h2>Post Project Timeline</h2>
+  <h2>Project Timeline</h2>
   <div class="projectTimeline">
     {% comment %}
-      site.posts is automatically sorted by date, newest first (reverse chronological)
-      This ensures latest posts appear at the top of the projectTimeline
-      Posts tagged with "private" are excluded from display
+      site.project_posts is automatically sorted by date, newest first (reverse chronological)
+      This collection contains only project posts from the project/_posts/ directory
     {% endcomment %}
-    {% for post in site.posts %}
-    {% if post.tags contains "project" %}
-    {% unless post.tags contains "private" %}
+    {% for post in site.project_posts %}
     <div class="projectTimeline-item" data-date="{{ post.date | date_to_xmlschema }}">
       <div class="projectTimeline-marker"></div>
       <div class="projectTimeline-content">
@@ -24,8 +21,6 @@
         {% endif %}
       </div>
     </div>
-    {% endunless %}
-    {% endif %}
     {% endfor %}
   </div>
 </section>
