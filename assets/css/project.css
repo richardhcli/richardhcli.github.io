@@ -1,0 +1,198 @@
+/* Project Timeline Styles */
+.projectTimeline-section {
+  padding: 3rem 0;
+}
+
+.projectTimeline-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.projectTimeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 2rem;
+}
+
+.projectTimeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--timeline-color), var(--primary-dark));
+}
+
+.projectTimeline-item {
+  position: relative;
+  padding-bottom: 2.5rem;
+  padding-left: 2rem;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.projectTimeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.projectTimeline-item-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Initial state for items already in viewport */
+.projectTimeline-item:nth-child(1),
+.projectTimeline-item:nth-child(2) {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.projectTimeline-marker {
+  position: absolute;
+  left: -2.5rem;
+  top: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--timeline-color);
+  border: 3px solid var(--bg-color);
+  box-shadow: 0 0 0 3px var(--timeline-color);
+}
+
+.projectTimeline-content {
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.projectTimeline-content:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.projectTimeline-content time {
+  display: inline-block;
+  font-size: 0.875rem;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+.projectTimeline-content h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.projectTimeline-content h3 a {
+  color: var(--text-color);
+}
+
+.projectTimeline-content h3 a:hover {
+  color: var(--primary-color);
+}
+
+.projectTimeline-content p {
+  margin: 0 0 1rem;
+  color: var(--text-light);
+}
+
+/* Project/Post Page */
+.project-page,
+.post-page {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.project-header,
+.post-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.project-header h1,
+.post-header h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2.5rem;
+}
+
+.project-header time,
+.post-header time {
+  color: var(--text-light);
+}
+
+.project-content,
+.post-content {
+  line-height: 1.8;
+}
+
+.project-content h2,
+.post-content h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.project-content ul,
+.project-content ol,
+.post-content ul,
+.post-content ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.project-content li,
+.post-content li {
+  margin-bottom: 0.5rem;
+}
+
+.project-content code,
+.post-content code {
+  background: var(--bg-secondary);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.project-content pre,
+.post-content pre {
+  background: var(--text-color);
+  color: var(--bg-color);
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.project-content pre code,
+.post-content pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.project-footer,
+.post-footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Responsive Design - Projects */
+@media (max-width: 768px) {
+  .projectTimeline {
+    padding-left: 1rem;
+  }
+
+  .projectTimeline-item {
+    padding-left: 1.5rem;
+  }
+
+  .projectTimeline-marker {
+    left: -1.5rem;
+    width: 10px;
+    height: 10px;
+  }
+}
