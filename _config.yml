@@ -29,12 +29,12 @@ defaults:
     values:
       layout: "post"
   - scope:
-      path: "project/_posts"
+      path: ""
       type: "project_posts"
     values:
       layout: "projectPost"
   - scope:
-      path: "blog/_posts"
+      path: ""
       type: "blog_posts"
     values:
       layout: "blogPost"
