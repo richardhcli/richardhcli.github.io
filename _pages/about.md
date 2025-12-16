@@ -21,4 +21,6 @@ permalink: /about/
   <p><a href="https://github.com/richardhcli" target="_blank" rel="noopener">GitHub</a></p>
   
   <p><a href="{{ '/assets/pdfs/Richard-Li_resume-11_29_2025.pdf' | relative_url }}" target="_blank" rel="noopener">View my resume (PDF)</a></p>
+
+  <p> [debug]({%link /debug %}) for this website </p>
 </article>
