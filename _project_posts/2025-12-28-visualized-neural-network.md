@@ -3,6 +3,10 @@ title: "Visualized neural network"
 description: "28x28 -> 16 -> 16 -> 10 MNIST neural network visualization"
 date: 2025-12-28
 tags:
+- machine learning
+- neural networks
+- web development
+- huggingface spaces
 github_url: "https://github.com/richardhcli/neural_network_visualization"
 demo_url: "https://huggingface.co/spaces/richardhcli/simple_neural_network_visualizer"
 ---
