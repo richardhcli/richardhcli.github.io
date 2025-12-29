@@ -16,6 +16,18 @@ layout: default
     {% endif %}
   </header>
   
+  <div class="demos">
+    {% if page.github_url %}
+    <a href="{{ page.github_url }}" class="btn" target="_blank" rel="noopener">View on GitHub</a>
+    {% endif %}
+    {% if page.demo_url %}
+    <a href="{{ page.demo_url }}" class="btn btn-secondary" target="_blank" rel="noopener">Live Demo</a>
+    {% endif %}
+    <a href="{{ '/projectLog/' | relative_url }}" class="btn btn-back">← Back to Project Log</a>
+
+  </div>
+
+
   <div class="post-content">
     {{ content }}
   </div>
