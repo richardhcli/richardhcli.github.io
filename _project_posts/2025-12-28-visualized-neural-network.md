@@ -17,7 +17,7 @@ Visualization of a machine learning model, and making its difficulties intuitive
 Display a 784 (28 * 28) -> 16 -> 16 -> 10 neural network using spheres as neurons and lines as connectors in threejs to completely visualize a simple neural network. Live learning using the MNIST dataset. 
 
 Sample image: 
-![Neural network visualizer screenshot](/assets/images/projects/screenshot_neural_network_visualizer.png)
+![Neural network visualizer screenshot](/assets/images/projects/2025-12-28-screenshot_neural_network_visualizer.png)
 
 ## Details
 
