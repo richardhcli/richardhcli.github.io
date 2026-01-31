@@ -6,8 +6,6 @@ tags:
   - Web development
   - backend
   - Firebase
-github_url: ""
-demo_url: ""
 ---
 
 
@@ -40,11 +38,11 @@ I got some friends to test it out, and it made for a pretty funny work session.
 ### Images: 
 Using google sign in, profile pictures and users can be distinguished. 
 
-Desktop: 
-![Desktop 1](/assets/images/projects/2026-01-31-screenshot-mobile-1.jpg)
+#### Desktop: 
+![Desktop 1](/assets/images/projects/2026-01-30-Screenshot-website-image.png)
 ![Desktop 2](/assets/images/projects/2026-01-31-screenshot-webiste-image-2.png)
 
-Mobile: 
+#### Mobile: 
 ![Mobile 1](/assets/images/projects/2026-01-31-screenshot-mobile-1.jpg)
 ![Mobile 1](/assets/images/projects/2026-01-30-screenshot-mobile-2.jpg)
 
@@ -116,3 +114,5 @@ By adding a conditional here, everything smoothes out.
 Firebase-- really cool stuff. 
 
 I'll definitely use this in a project soon! Stay tuned!
+
+(github not provided because I'll be leaking an API key...)
