@@ -28,10 +28,25 @@ layout: default
   </div>
 
 
+  <!-- Content -->
   <div class="post-content">
     {{ content }}
   </div>
   
+
+  <!-- Comments Section -->
+  <div class="comments-section">
+    <script src="https://utteranc.es/client.js"
+            repo="richardhcli/richardhcli.github.io"
+            issue-term="pathname"
+            label="UtterancesComments"
+            theme="boxy-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+  </div>
+
+  <!-- Footer  -->
   <footer class="post-footer">
     {% if page.github_url %}
     <a href="{{ page.github_url }}" class="btn" target="_blank" rel="noopener">View on GitHub</a>
