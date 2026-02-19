@@ -5,7 +5,7 @@ layout: default
   Smart post layout that automatically detects post type based on tags:
   - If post contains "project" tag → render project-style footer (with GitHub/Demo links)
   - If post contains "blog" tag → render blog-style footer (back link only)
-  - Otherwise → render default footer (back link only)
+  - Otherwise → render default footer (back link to Home)
 {% endcomment %}
 <article class="post-page">
   <header class="post-header">
@@ -54,8 +54,8 @@ layout: default
       {% comment %} Blog post footer: show only back link {% endcomment %}
       <a href="{{ '/blogLog/' | relative_url }}" class="btn btn-back">← Back to Blog Log</a>
     {% else %}
-      {% comment %} Default footer: show back link (no destination preference) {% endcomment %}
-      <a href="{{ '/projectLog/' | relative_url }}" class="btn btn-back">← Back</a>
+      {% comment %} Default footer: show back link to Home {% endcomment %}
+      <a href="{{ '/' | relative_url }}" class="btn btn-back">← Back Home</a>
     {% endif %}
   </footer>
 </article>
