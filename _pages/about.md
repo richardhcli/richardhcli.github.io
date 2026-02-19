@@ -24,6 +24,6 @@ I would love to chat!
 
 [GitHub](https://github.com/richardhcli)
 
-[View my resume (PDF)]({{ '/assets/pdfs/Richard-Li_resume-11_29_2025.pdf' | relative_url }})
+[View my resume (PDF)]({{ '/assets/pdfs/RichardLi-Resume.pdf' | relative_url }})
 
 ###### Debug: [Debug page]({{ '/debug.html' | relative_url }}) for this website

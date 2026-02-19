@@ -13,6 +13,6 @@ title: Home
   
   <h2>Contact</h2>
   <p>Feel free to reach out: rhli.richardli@gmail.com | <a href="www.linkedin.com/in/richardhcli" target="_blank" rel="noopener"> www.linkedin.com/in/richardhcli </a> </p>
-    <p><a href="{{ '/assets/pdfs/Richard-Li_resume-11_29_2025.pdf' | relative_url }}" target="_blank" rel="noopener">View my resume (PDF)</a></p>
+    <p><a href="{{ '/assets/pdfs/RichardLi-Resume.pdf' | relative_url }}" target="_blank" rel="noopener">View my resume (PDF)</a></p>
   
 </article>
