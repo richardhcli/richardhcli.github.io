@@ -2,6 +2,10 @@
 layout: default
 title: Home
 ---
+<head>
+ <link rel="shortcut icon" type="image/x-icon" href="favicon.svg">
+</head>
+
 <article class="about-page">
   <h1>Richard Li</h1>
   
