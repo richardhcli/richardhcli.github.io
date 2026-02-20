@@ -17,7 +17,7 @@ Pipeline: IR LED -> finger -> phototransistor sensor -> filtered signal (high pa
 
 ### Demo video:
 <video controls preload="metadata" class="post-video">
-  <source src="{{ '/assets/videos/2025-12-10-20251204_134457.mp4' | relative_url }}" type="video/mp4">
+  <source src="{{ '/assets/videos/projects/2025-12-10-20251204_134457.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -26,7 +26,7 @@ Pipeline: IR LED -> finger -> phototransistor sensor -> filtered signal (high pa
 
 
 ## Details
-Full technical details, SPICE schematics, and oscilloscope measurements in writeup here: [Final Project Report]({{ '/assets/pdfs/2025-12-10-FinalProjectReport_li5042.pdf' | relative_url }})
+Full technical details, SPICE schematics, and oscilloscope measurements in writeup here: [Final Project Report]({{ '/assets/pdfs/projects/2025-12-10-FinalProjectReport_li5042.pdf' | relative_url }})
 
 
 ## Lessons Learned / Conclusion
