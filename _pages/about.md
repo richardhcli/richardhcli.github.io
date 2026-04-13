@@ -5,7 +5,7 @@ permalink: /about/
 ---
 Hello!
 
-Welcome to my [About]({{ '/about/' | relative_url }}) &#124; [Portfolio]({{ '/portfolio/' | relative_url }}) &#124; [Blog]({{ '/blog/' | relative_url }})!
+Welcome to my [About]({{ '/about/' | relative_url }}) &#124; [Portfolio]({{ '/projectLog/' | relative_url }}) &#124; [Blog]({{ '/blogLog/' | relative_url }})!
 
 
 My name is Richard Li, and I'm interested in one thing: machine learning architecture. 
