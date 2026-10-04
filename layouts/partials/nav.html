@@ -2,4 +2,31 @@
   <a class="home" href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
   <a href="{{ "blog/" | relURL }}">Blog</a>
   <a href="{{ "projects/" | relURL }}">Projects</a>
+  <button type="button" class="theme-toggle" aria-pressed="false" aria-label="Switch to dark mode">Dark</button>
 </nav>
+<script>
+(function () {
+  var button = document.querySelector(".theme-toggle");
+  if (!button) return;
+
+  function current() {
+    return document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+  }
+
+  function apply(theme) {
+    var dark = theme === "dark";
+    if (dark) document.documentElement.setAttribute("data-theme", "dark");
+    else document.documentElement.removeAttribute("data-theme");
+    button.textContent = dark ? "Light" : "Dark";
+    button.setAttribute("aria-pressed", dark ? "true" : "false");
+    button.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+  }
+
+  apply(current());
+  button.addEventListener("click", function () {
+    var next = current() === "dark" ? "light" : "dark";
+    try { localStorage.setItem("theme", next); } catch (e) {}
+    apply(next);
+  });
+})();
+</script>
