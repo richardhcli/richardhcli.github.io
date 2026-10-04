@@ -73,6 +73,6 @@ tags:
 
 ## What stays outside a note
 
-`static/` is for files that belong to the whole site: `static/css/style.css`, `static/favicon.svg`, and `static/resume.pdf`. The resume link on the home page is `/resume.pdf`.
+`static/` is for files that belong to the whole site: `static/css/style.css` and `static/favicon.svg`. The resume link on the home page and in the sidebar opens the current PDF on Google Drive.
 
 Hugo writes the generated site to `build/`. That folder is gitignored.

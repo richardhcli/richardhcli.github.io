@@ -9,11 +9,10 @@ disableKinds = ["taxonomy", "term"]
   description = "Richard Li. Machine learning architecture."
   role = "ML Engineer · Firmware Tinkerer · EE Builder"
   location = "West Lafayette, Indiana"
-  email = "rhli.richardli@gmail.com"
-  website = "https://richardhcli.com/"
+  email = "richardhcli@gmail.com"
   github = "https://github.com/richardhcli"
   linkedin = "https://www.linkedin.com/in/richardhcli"
-  cv = "/resume.pdf"
+  resume = "https://drive.google.com/file/d/1nKXqQy7LzwMQU_mMiYjSvF6az85v4pTR/view?usp=drive_link"
 
 [markup]
   [markup.goldmark]

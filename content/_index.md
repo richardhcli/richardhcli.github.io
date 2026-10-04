@@ -1,24 +1,43 @@
 ---
 title: Richard Li
+description: A little bit about me
 ---
 
-# Richard Li
+Hi!
+Richard Li here.
 
-a passionate engineer with entire worlds of ideas.
+## My interests
 
-My name is Richard Li, and I'm interested in one thing: machine learning architecture.
-To me, this represents the intersection of applied psychology, applied philosophy, and pattern recognition-optimization.
-No wonder it's so popular! No wonder it's so powerful! No wonder it contains so much of what I want to do!
+There's really only one thing that interests me technically: **_machine learning architecture_**, and improving automated thinking processes.
+Specifically, these factors of ML:
 
-More precisely, I am very interested in ML algorithms from the statistics side, implementing end-to-end pipelines for user experience, the high-end compute that makes all this inferencing possible, and the cost functions of both the model and the user / business (they are approaching the same thing, after all!)
+- Applied psychology: proving how we think mathematically, instead of just emperical observation. What is intelligence?
+- Efficiency: improving how we reason and learn by knowing exactly what we are working with. How can we grow?
+- Potential: intelligence is arguably the most important quality we have. What insights can we do with more?
 
-Have a peek at what I have been doing or any insights I have wanted to share!
+To this end, I am interested in the following implementations:
+
+- Computer Science: Developing algorithms to encapture and prove the methods of reasoning and deduction.
+- Statistics: Using mathematics as a basis for philosophical proofs on human behavior, on bot the micro (individual) and macro (society) levels.
+- Finances: it seems like this is the highest ROI for computation?
+
+Some other adjacent fields that provoke my interest:
+
+- Applets: end-to-end pipelines for user experience; workflow optimizations
+- Computur Engineering: designing the compute that makes training and inference possible
+
+If you share these interests, feel free to send me an email!
+
+## Explore this site
+
+- [Projects](/projects/) — finished builds and write-ups
+- [Blog](/blog/) — technical notes and reflective writing
 
 ## Contact
 
-Feel free to reach out: rhli.richardli@gmail.com | [www.linkedin.com/in/richardhcli](https://www.linkedin.com/in/richardhcli).
-I would love to chat!
+I'd love to chat.
 
-[GitHub](https://github.com/richardhcli)
-
-[View my resume (PDF)](/resume.pdf)
+- Email: [richardhcli@gmail.com](mailto:richardhcli@gmail.com)
+- [LinkedIn](https://www.linkedin.com/in/richardhcli)
+- [GitHub](https://github.com/richardhcli)
+- [Resume (PDF)](https://drive.google.com/file/d/1nKXqQy7LzwMQU_mMiYjSvF6az85v4pTR/view?usp=drive_link)
