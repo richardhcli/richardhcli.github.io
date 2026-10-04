@@ -22,6 +22,10 @@ disableKinds = ["taxonomy", "term"]
     style = "dracula"
     noClasses = true
 
+[permalinks]
+  blog = "/blog/:slug/"
+  projects = "/projects/:slug/"
+
 [outputs]
   home = ["HTML", "RSS"]
   section = ["HTML", "RSS"]

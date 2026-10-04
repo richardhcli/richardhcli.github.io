@@ -26,14 +26,24 @@ Open http://localhost:1313/. `-D` shows drafts. The live site leaves drafts out.
 
 A note is a folder. The writing is `index.md`. Pictures, video, and PDFs go in that same folder.
 
-Start the folder name with today's date as `YYYY.MM.DD` so the folders sort in order:
+Notes for a year sit in a plain folder named with that year. The note folder itself still starts with the date as `YYYY.MM.DD`. You type the section and the slug.
+
+Macros live in `macros/`. `new-note.ps1` reads the clock once, creates the year folder if it is missing, and fills in the date prefix:
 
 ```powershell
-hugo new content "blog/$(Get-Date -Format yyyy.MM.dd)-my-note/index.md"
-hugo new content "projects/$(Get-Date -Format yyyy.MM.dd)-my-note/index.md"
+.\macros\new-note.ps1 blog/new_post
+.\macros\new-note.ps1 projects/new_post
 ```
 
-That creates `content/blog/2026.10.03-my-note/`. The date prefix is only for your file list. The public URL is `/blog/my-note/`, from the `slug` line the command fills in. Edit `title` if you want different words. Rename the part after the date if you want a different URL, and keep `slug` the same as that part.
+The same folder from Hugo, with no macro:
+
+```powershell
+$now = Get-Date
+hugo new content "blog/$($now.ToString('yyyy'))/$($now.ToString('yyyy.MM.dd'))-new_post/index.md"
+hugo new content "projects/$($now.ToString('yyyy'))/$($now.ToString('yyyy.MM.dd'))-new_post/index.md"
+```
+
+Run on 4 October 2026, either command creates `content/blog/2026/2026.10.04-new_post/`. The year folder has no page of its own. The date prefix is only for your file list. The public URL is `/blog/new_post/`, from the `slug` line the command fills in. Edit `title` if you want different words. Rename the part after the date if you want a different URL, and keep `slug` the same as that part.
 
 `draft: true` keeps the note off the live site. Delete that line when it is ready, then push to `main`.
 

@@ -9,7 +9,7 @@
 {{- end -}}
 {{- end -}}
 ---
-title: "{{ replace $slug "-" " " | title }}"
+title: "{{ replace (replace $slug "_" " ") "-" " " | title }}"
 description: ""
 date: {{ $date }}
 slug: {{ $slug }}
