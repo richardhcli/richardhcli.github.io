@@ -12,20 +12,104 @@
 html { background: var(--bg); }
 
 body {
-  margin: 0 auto;
-  padding: 2.5rem 1.25rem 4rem;
-  max-width: 40rem;
+  margin: 0;
+  overflow-x: hidden;
   color: var(--fg);
   background: var(--bg);
   font: 1.0625rem/1.7 Georgia, "Iowan Old Style", Palatino, "Palatino Linotype", serif;
 }
 
+.shell {
+  max-width: 84rem;
+  margin: 0 auto;
+  padding: 2rem 1.75rem 4rem;
+}
+
+.page {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+.sidebar {
+  flex: 0 0 15rem;
+  width: 15rem;
+  max-width: 15rem;
+  min-width: 0;
+  position: sticky;
+  top: 1.5rem;
+}
+
+.sidebar-backdrop { display: none; }
+
+.portrait {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.sidebar .name {
+  margin: 0.9rem 0 0.15rem;
+  font-size: 1.25rem;
+}
+
+.sidebar .role,
+.sidebar .where {
+  margin: 0.15rem 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+.sidelinks {
+  list-style: none;
+  padding: 0;
+  margin: 0.9rem 0 0;
+}
+
+.sidelinks li { margin: 0.2rem 0; }
+
 nav {
   display: flex;
   flex-wrap: wrap;
   gap: 1.25rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   font-size: 0.95rem;
+}
+
+main { flex: 1 1 auto; min-width: 0; }
+
+@media (max-width: 700px) {
+  .page { display: block; }
+
+  .sidebar {
+    position: fixed;
+    z-index: 30;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: min(18rem, 86vw);
+    max-width: 86vw;
+    margin: 0;
+    padding: 1.25rem 1.25rem 2rem;
+    background: var(--bg);
+    overflow: auto;
+    transform: translateX(-110%);
+    transition: transform 0.22s ease;
+  }
+
+  .sidebar.is-open { transform: translateX(0); }
+
+  .sidebar-backdrop.is-open {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    background: rgba(0, 0, 0, 0.45);
+  }
 }
 
 nav a { color: var(--muted); text-decoration: none; }
@@ -58,6 +142,8 @@ ul.posts {
 ul.posts li { margin: 0 0 1.15rem; }
 ul.posts time { display: block; font-size: 0.85rem; }
 ul.posts .desc { display: block; color: var(--muted); }
+ul.posts .tags { display: block; color: var(--accent); font-size: 0.9rem; }
+.meta .tags { color: var(--accent); }
 
 blockquote {
   margin: 1.25rem 0;

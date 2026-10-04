@@ -8,14 +8,17 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <nav>
-    <a class="home" href="/">Richard Li</a>
-    <a href="/blog/">Blog</a>
-    <a href="/projects/">Projects</a>
-  </nav>
-  <main>
-    <h1>Not found</h1>
-    <p><a href="/">Home</a></p>
-  </main>
+  <div class="shell">
+    {{ partial "nav.html" . }}
+    <div class="page">
+      {{ partial "sidebar.html" . }}
+      <main>
+        <h1>Not found</h1>
+        <p><a href="/">Home</a></p>
+      </main>
+    </div>
+  </div>
+  <div class="sidebar-backdrop"></div>
+  {{ partial "sidebar-toggle.html" . }}
 </body>
 </html>

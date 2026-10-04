@@ -1,0 +1,43 @@
+<script>
+(function () {
+  var sidebar = document.querySelector(".sidebar");
+  var backdrop = document.querySelector(".sidebar-backdrop");
+  if (!sidebar) return;
+
+  var narrow = window.matchMedia("(max-width: 700px)");
+  var startX = 0;
+  var startY = 0;
+  var tracking = false;
+
+  function setOpen(open) {
+    var show = narrow.matches && open;
+    sidebar.classList.toggle("is-open", show);
+    if (backdrop) backdrop.classList.toggle("is-open", show);
+    sidebar.setAttribute("aria-hidden", narrow.matches && !show ? "true" : "false");
+  }
+
+  document.addEventListener("touchstart", function (event) {
+    if (!narrow.matches) return;
+    var touch = event.changedTouches[0];
+    startX = touch.clientX;
+    startY = touch.clientY;
+    tracking = true;
+  }, { passive: true });
+
+  document.addEventListener("touchend", function (event) {
+    if (!narrow.matches || !tracking) return;
+    tracking = false;
+    var touch = event.changedTouches[0];
+    var dx = touch.clientX - startX;
+    var dy = touch.clientY - startY;
+    if (Math.abs(dx) < 56 || Math.abs(dx) < Math.abs(dy)) return;
+    var open = sidebar.classList.contains("is-open");
+    if (!open && dx > 0 && startX < 40) setOpen(true);
+    if (open && dx < 0) setOpen(false);
+  }, { passive: true });
+
+  if (backdrop) backdrop.addEventListener("click", function () { setOpen(false); });
+  narrow.addEventListener("change", function () { setOpen(false); });
+  setOpen(false);
+})();
+</script>

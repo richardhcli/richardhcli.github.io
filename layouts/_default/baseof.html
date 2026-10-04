@@ -12,13 +12,16 @@
   {{ end }}
 </head>
 <body>
-  <nav>
-    <a class="home" href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
-    <a href="{{ "blog/" | relURL }}">Blog</a>
-    <a href="{{ "projects/" | relURL }}">Projects</a>
-  </nav>
-  <main>
-    {{ block "main" . }}{{ end }}
-  </main>
+  <div class="shell">
+    {{ partial "nav.html" . }}
+    <div class="page">
+      {{ partial "sidebar.html" . }}
+      <main>
+        {{ block "main" . }}{{ end }}
+      </main>
+    </div>
+  </div>
+  <div class="sidebar-backdrop"></div>
+  {{ partial "sidebar-toggle.html" . }}
 </body>
 </html>

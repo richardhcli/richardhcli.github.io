@@ -3,13 +3,7 @@
   <h1>{{ .Title }}</h1>
   <p class="meta">
     <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
-    {{- $tags := slice -}}
-    {{- range .Params.tags -}}
-      {{- if and (ne . "blog") (ne . "project") -}}
-        {{- $tags = $tags | append . -}}
-      {{- end -}}
-    {{- end -}}
-    {{- with $tags }} · {{ delimit . ", " }}{{ end }}
+    {{- with partial "tags.html" . }} · <span class="tags">{{ . }}</span>{{ end }}
   </p>
   {{ if or .Params.github_url .Params.demo_url }}
   <p class="meta">

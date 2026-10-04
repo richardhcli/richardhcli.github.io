@@ -1,11 +1,19 @@
 baseURL = "https://richardhcli.github.io/"
 locale = "en-us"
 title = "Richard Li"
+publishDir = "build"
 enableRobotsTXT = true
 disableKinds = ["taxonomy", "term"]
 
 [params]
   description = "Richard Li. Machine learning architecture."
+  role = "ML Engineer · Firmware Tinkerer · EE Builder"
+  location = "West Lafayette, Indiana"
+  email = "rhli.richardli@gmail.com"
+  website = "https://richardhcli.com/"
+  github = "https://github.com/richardhcli"
+  linkedin = "https://www.linkedin.com/in/richardhcli"
+  cv = "/resume.pdf"
 
 [markup]
   [markup.goldmark]
