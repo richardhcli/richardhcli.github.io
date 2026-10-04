@@ -1,7 +1,9 @@
 <nav>
-  <a class="home" href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
-  <a href="{{ "blog/" | relURL }}">Blog</a>
-  <a href="{{ "projects/" | relURL }}">Projects</a>
+  <a href="{{ "/" | relURL }}"{{ if .IsHome }} class="active"{{ end }}>Richard Li's homepage</a>
+  <a href="{{ "projects/" | relURL }}"{{ if eq .Section "projects" }} class="active"{{ end }}>projects</a>
+  <a href="{{ "blog/" | relURL }}"{{ if eq .Section "blog" }} class="active"{{ end }}>blog</a>
+  <a href="{{ .Site.Params.resume }}">CV</a>
+  <a href="{{ "about/" | relURL }}"{{ if eq .RelPermalink ("about/" | relURL) }} class="active"{{ end }}>about</a>
   <button type="button" class="theme-toggle" aria-pressed="false" aria-label="Switch to dark mode">Dark</button>
 </nav>
 <script>

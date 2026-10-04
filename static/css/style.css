@@ -82,9 +82,7 @@ body {
 .portrait {
   display: block;
   width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
-  object-position: center top;
+  height: auto;
 }
 
 .sidebar .name {
@@ -225,7 +223,7 @@ main {
 }
 
 nav a { color: var(--muted); text-decoration: none; }
-nav a.home { color: var(--fg); }
+nav a.active { color: var(--fg); }
 nav a:hover { color: var(--link); }
 
 .theme-toggle {
