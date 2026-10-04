@@ -16,17 +16,14 @@ This is a virtual display of my heartbeat sensor I (with a lab partner) made, de
 Pipeline: IR LED -> finger -> phototransistor sensor -> filtered signal (high pass, low pass) -> 1bit ADC -> LED indicator
 
 ### Demo video:
-<video controls preload="metadata" class="post-video">
-  <source src="/assets/videos/projects/2025-12-10-20251204_134457.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+{{< video "demo.mp4" >}}
 
 ## Key Points
 - Each module in the pipeline was individually tested, confirmed, and integrated. Using this method, the project was sucessful overall! 
 
 
 ## Details
-Full technical details, SPICE schematics, and oscilloscope measurements in writeup here: [Final Project Report](/assets/pdfs/projects/2025-12-10-FinalProjectReport_li5042.pdf)
+Full technical details, SPICE schematics, and oscilloscope measurements in writeup here: [Final Project Report](report.pdf)
 
 
 ## Lessons Learned / Conclusion

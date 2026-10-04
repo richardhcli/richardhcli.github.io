@@ -39,16 +39,16 @@ I got some friends to test it out, and it made for a pretty funny work session.
 Using google sign in, profile pictures and users can be distinguished. 
 
 #### Desktop: 
-![Desktop 1](/assets/images/projects/2026-01-30-Screenshot-website-image.png)
-![Desktop 2](/assets/images/projects/2026-01-31-screenshot-webiste-image-2.png)
+![Desktop 1](desktop-1.png)
+![Desktop 2](desktop-2.png)
 
 #### Mobile: 
-![Mobile 1](/assets/images/projects/2026-01-31-screenshot-mobile-1.jpg)
-![Mobile 1](/assets/images/projects/2026-01-30-screenshot-mobile-2.jpg)
+![Mobile 1](mobile-1.jpg)
+![Mobile 1](mobile-2.jpg)
 
 #### Backend view: 
-![Backend authentication](/assets/images/projects/2026-01-31-screenshot-backend-auth.png)
-![Backend database](/assets/images/projects/2026-01-31-screenshot-backend-database.png)
+![Backend authentication](backend-auth.png)
+![Backend database](backend-database.png)
 
 
 

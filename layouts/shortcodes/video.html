@@ -1,0 +1,7 @@
+{{- $name := .Get 0 -}}
+{{- $res := .Page.Resources.Get $name -}}
+{{- $src := $name -}}
+{{- if $res }}{{ $src = $res.RelPermalink }}{{ end -}}
+<video controls preload="metadata">
+  <source src="{{ $src }}" type="video/mp4">
+</video>

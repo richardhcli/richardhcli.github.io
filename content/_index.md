@@ -21,4 +21,4 @@ I would love to chat!
 
 [GitHub](https://github.com/richardhcli)
 
-[View my resume (PDF)](/assets/pdfs/RichardLi-Resume.pdf)
+[View my resume (PDF)](/resume.pdf)
