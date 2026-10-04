@@ -1,0 +1,22 @@
+{{ define "main" }}
+<article>
+  <h1>{{ .Title }}</h1>
+  <p class="meta">
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+    {{- $tags := slice -}}
+    {{- range .Params.tags -}}
+      {{- if and (ne . "blog") (ne . "project") -}}
+        {{- $tags = $tags | append . -}}
+      {{- end -}}
+    {{- end -}}
+    {{- with $tags }} · {{ delimit . ", " }}{{ end }}
+  </p>
+  {{ if or .Params.github_url .Params.demo_url }}
+  <p class="meta">
+    {{- with .Params.github_url }}<a href="{{ . }}">GitHub</a>{{ end -}}
+    {{- with .Params.demo_url }}{{ if $.Params.github_url }} · {{ end }}<a href="{{ . }}">Demo</a>{{ end -}}
+  </p>
+  {{ end }}
+  {{ .Content }}
+</article>
+{{ end }}

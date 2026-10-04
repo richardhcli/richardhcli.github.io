@@ -1,19 +1,9 @@
-# Jekyll
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
-vendor/
+# Hugo
+/public/
+/resources/
+.hugo_build.lock
 
-# Bundle
-.bundle/
-Gemfile.lock
-
-# Node
-node_modules/
-
-# Misc
-*.swp
-*.swo
-*~
+# OS
 .DS_Store
+*~
+*.swp

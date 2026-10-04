@@ -1,6 +1,9 @@
 # richardhcli.github.io
-My personal portfolio website
 
-Project posts go into "project\_posts"
-Blog psots go into "blog\_posts"
-Demo: template folder in "_posts". 
+Personal site. Text only, built with [Hugo](https://gohugo.io/).
+
+```bash
+hugo server
+```
+
+Writing goes in `content/blog/`. Project notes go in `content/projects/`. Images, PDFs, and video go in `static/`.
