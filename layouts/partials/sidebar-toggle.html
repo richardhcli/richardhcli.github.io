@@ -1,23 +1,29 @@
 <script>
 (function () {
   var sidebar = document.querySelector(".sidebar");
+  var main = document.querySelector("main");
   var backdrop = document.querySelector(".sidebar-backdrop");
   if (!sidebar) return;
 
-  var narrow = window.matchMedia("(max-width: 700px)");
+  var drawer = window.matchMedia("(max-width: 700px) and (min-aspect-ratio: 3/4)");
+  var tall = window.matchMedia("(max-aspect-ratio: 3/4)");
   var startX = 0;
   var startY = 0;
   var tracking = false;
 
+  function drawerActive() {
+    return drawer.matches && !tall.matches;
+  }
+
   function setOpen(open) {
-    var show = narrow.matches && open;
+    var show = drawerActive() && open;
     sidebar.classList.toggle("is-open", show);
     if (backdrop) backdrop.classList.toggle("is-open", show);
-    sidebar.setAttribute("aria-hidden", narrow.matches && !show ? "true" : "false");
+    sidebar.setAttribute("aria-hidden", drawerActive() && !show ? "true" : "false");
   }
 
   document.addEventListener("touchstart", function (event) {
-    if (!narrow.matches) return;
+    if (!drawerActive()) return;
     var touch = event.changedTouches[0];
     startX = touch.clientX;
     startY = touch.clientY;
@@ -25,7 +31,7 @@
   }, { passive: true });
 
   document.addEventListener("touchend", function (event) {
-    if (!narrow.matches || !tracking) return;
+    if (!drawerActive() || !tracking) return;
     tracking = false;
     var touch = event.changedTouches[0];
     var dx = touch.clientX - startX;
@@ -37,7 +43,41 @@
   }, { passive: true });
 
   if (backdrop) backdrop.addEventListener("click", function () { setOpen(false); });
-  narrow.addEventListener("change", function () { setOpen(false); });
+  drawer.addEventListener("change", function () { setOpen(false); });
+  tall.addEventListener("change", function () { setOpen(false); });
+
+  if (main) {
+    document.addEventListener("wheel", function (event) {
+      if (tall.matches || drawerActive() || event.ctrlKey) return;
+      if (sidebar.contains(event.target) || main.contains(event.target)) return;
+      main.scrollBy({ top: event.deltaY, left: 0 });
+    }, { passive: true });
+
+    document.addEventListener("keydown", function (event) {
+      if (tall.matches || drawerActive()) return;
+      if (event.altKey || event.ctrlKey || event.metaKey) return;
+      var target = event.target;
+      if (!target || sidebar.contains(target) || main.contains(target)) return;
+      if (target.isContentEditable) return;
+      var tag = target.tagName;
+      if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
+
+      var page = Math.max(main.clientHeight * 0.85, 80);
+      var delta = 0;
+      if (event.key === "ArrowDown") delta = 48;
+      else if (event.key === "ArrowUp") delta = -48;
+      else if (event.key === "PageDown") delta = page;
+      else if (event.key === "PageUp") delta = -page;
+      else if (event.key === " ") delta = event.shiftKey ? -page : page;
+      else if (event.key === "Home") delta = -main.scrollHeight;
+      else if (event.key === "End") delta = main.scrollHeight;
+      else return;
+
+      main.scrollBy({ top: delta });
+      event.preventDefault();
+    });
+  }
+
   setOpen(false);
 })();
 </script>

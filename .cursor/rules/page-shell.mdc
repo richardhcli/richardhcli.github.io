@@ -1,0 +1,30 @@
+---
+description: Page shell structure, independent scroll, and the three sidebar layout modes
+globs: layouts/**/*.html,static/css/style.css
+alwaysApply: false
+---
+
+# Page shell
+
+`layouts/_default/baseof.html` is the document. Keep this shape:
+
+- `.shell` holds `nav`, then `.page`
+- `.page` holds `.sidebar` (partial `sidebar.html`), then `main`
+- `.sidebar-backdrop` is a sibling of `.shell`, not inside it
+- `layouts/partials/sidebar-toggle.html` is the only behavior script
+
+`static/css/style.css` and the `matchMedia` strings in that script must use the same queries. `drawerActive()` is the drawer query and not the tall query. At exactly 3/4, tall wins.
+
+## Modes
+
+Default, wider than tall: `body` does not scroll. `.sidebar` and `main` are separate scrollports (`overflow-y: auto`, `overscroll-behavior: contain`, `min-height: 0` on `.page`, `.sidebar`, and `main`). The nav stays put. A wheel or key event whose target is outside both columns scrolls `main` only.
+
+Tall (`max-aspect-ratio: 3/4`): the document scrolls. The sidebar is normal flow after the article (`order: 2` on `.sidebar`). It is `position: static` with `overflow: visible`, including `.sidebar.is-open`.
+
+Drawer (`max-width: 700px` and `min-aspect-ratio: 3/4`): the sidebar is off-canvas until `.is-open`. A rightward swipe that starts within 40px of the left edge opens it; a leftward swipe or a backdrop click closes it. Closed means `aria-hidden="true"`.
+
+## Scrollbar
+
+`.sidebar` keeps `overflow-y: auto`. The bar is hidden with `scrollbar-width: none` and `.sidebar::-webkit-scrollbar { display: none }`. Hiding it by setting `overflow: hidden` removes the scroll. `main` keeps a visible scrollbar.
+
+The script depends on `.sidebar`, `main`, `.sidebar-backdrop`, and `.is-open`.

@@ -13,7 +13,7 @@ html { background: var(--bg); }
 
 body {
   margin: 0;
-  overflow-x: hidden;
+  overflow: hidden;
   color: var(--fg);
   background: var(--bg);
   font: 1.0625rem/1.7 Georgia, "Iowan Old Style", Palatino, "Palatino Linotype", serif;
@@ -21,15 +21,22 @@ body {
 
 .shell {
   max-width: 84rem;
+  height: 100vh;
+  height: 100dvh;
   margin: 0 auto;
-  padding: 2rem 1.75rem 4rem;
+  padding: 2rem 1.75rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 
 .page {
   display: flex;
   flex-flow: row nowrap;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 3rem;
+  flex: 1 1 auto;
+  min-height: 0;
 }
 
 .sidebar {
@@ -37,8 +44,17 @@ body {
   width: 15rem;
   max-width: 15rem;
   min-width: 0;
-  position: sticky;
-  top: 1.5rem;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 .sidebar-backdrop { display: none; }
@@ -74,16 +90,38 @@ body {
 
 nav {
   display: flex;
+  flex: 0 0 auto;
   flex-wrap: wrap;
   gap: 1.25rem;
   margin-bottom: 2rem;
   font-size: 0.95rem;
 }
 
-main { flex: 1 1 auto; min-width: 0; }
+main {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-bottom: 2.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--code) transparent;
+}
 
-@media (max-width: 700px) {
+/* Narrow, but not a tall portrait frame: sidebar stays an off-canvas drawer. */
+@media (max-width: 700px) and (min-aspect-ratio: 3/4) {
+  body { overflow-x: hidden; overflow-y: auto; }
+
+  .shell {
+    height: auto;
+    display: block;
+    padding-bottom: 4rem;
+  }
+
   .page { display: block; }
+
+  main { overflow: visible; padding-bottom: 0; }
 
   .sidebar {
     position: fixed;
@@ -91,8 +129,10 @@ main { flex: 1 1 auto; min-width: 0; }
     top: 0;
     left: 0;
     bottom: 0;
+    flex: none;
     width: min(18rem, 86vw);
     max-width: 86vw;
+    height: auto;
     margin: 0;
     padding: 1.25rem 1.25rem 2rem;
     background: var(--bg);
@@ -110,6 +150,56 @@ main { flex: 1 1 auto; min-width: 0; }
     z-index: 20;
     background: rgba(0, 0, 0, 0.45);
   }
+}
+
+/* Much taller than wide: read the page, then the sidebar follows. */
+@media (max-aspect-ratio: 3/4) {
+  body { overflow-x: hidden; overflow-y: auto; }
+
+  .shell {
+    height: auto;
+    display: block;
+    padding-bottom: 4rem;
+  }
+
+  .page {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    min-height: 0;
+  }
+
+  main {
+    order: 1;
+    overflow: visible;
+    padding-bottom: 0;
+  }
+
+  .sidebar,
+  .sidebar.is-open {
+    order: 2;
+    position: static;
+    z-index: auto;
+    top: auto;
+    left: auto;
+    bottom: auto;
+    flex: none;
+    align-self: start;
+    width: min(15rem, 100%);
+    max-width: 15rem;
+    height: auto;
+    max-height: none;
+    margin: 2.75rem 0 0;
+    padding: 1.75rem 0 0;
+    background: transparent;
+    border-top: 1px solid var(--code);
+    overflow: visible;
+    transform: none;
+  }
+
+  .sidebar-backdrop,
+  .sidebar-backdrop.is-open { display: none; }
 }
 
 nav a { color: var(--muted); text-decoration: none; }
@@ -159,6 +249,7 @@ code {
 }
 
 pre {
+  max-width: 100%;
   overflow-x: auto;
   padding: 0.9rem 1rem;
   background: #21222c;
