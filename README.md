@@ -17,7 +17,7 @@ A push to `main` builds the site and publishes it to GitHub Pages. A custom doma
 ## Preview
 
 ```bash
-hugo server -D
+hugo server -D --disableFastRender --noHTTPCache
 ```
 
 Open http://localhost:1313/. `-D` shows drafts. The live site leaves drafts out.
@@ -83,6 +83,6 @@ tags:
 
 ## What stays outside a note
 
-`static/` is for files that belong to the whole site: `static/css/style.css` and `static/favicon.svg`. The resume link on the home page and in the sidebar opens the current PDF on Google Drive.
+`static/` is for files that belong to the whole site: See `static/README.md`
 
 Hugo writes the generated site to `build/`. That folder is gitignored.

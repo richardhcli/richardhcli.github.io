@@ -1,0 +1,1 @@
+`static/css/style.css` and `static/favicon.svg`. The résumé links point at `/resume/`, which opens the current PDF.

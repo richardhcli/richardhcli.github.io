@@ -1,12 +1,13 @@
 <aside class="sidebar">
-  <img class="portrait" src="{{ "linkedin.jpg" | relURL }}" alt="Richard Li">
+  <img class="portrait" src="{{ "linkedin.jpg" | relURL }}" alt="Richard Li image">
   <p class="name">{{ .Site.Title }}</p>
+  <p class="description">{{ .Site.Params.description }}</p>
   <p class="role">{{ .Site.Params.role }}</p>
   <p class="where">{{ .Site.Params.location }}</p>
   <ul class="sidelinks">
     <li><a href="mailto:{{ .Site.Params.email }}">Email</a></li>
     <li><a href="{{ .Site.Params.github }}">GitHub</a></li>
     <li><a href="{{ .Site.Params.linkedin }}">LinkedIn</a></li>
-    <li><a href="{{ .Site.Params.resume }}">Resume</a></li>
+    <li><a href="{{ .Site.Params.resume | relURL }}">Resume</a></li>
   </ul>
 </aside>

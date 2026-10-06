@@ -60,6 +60,8 @@ body {
 }
 
 .sidebar {
+  display: flex;
+  flex-direction: column;
   flex: 0 0 15rem;
   width: 15rem;
   max-width: 15rem;
@@ -81,8 +83,21 @@ body {
 
 .portrait {
   display: block;
-  width: 100%;
+  width: auto;
   height: auto;
+  max-width: 100%;
+  max-height: calc(100% - 19rem);
+  align-self: flex-start;
+  object-fit: contain;
+  object-position: center top;
+}
+
+.sidebar .name,
+.sidebar .description,
+.sidebar .role,
+.sidebar .where,
+.sidelinks {
+  flex-shrink: 0;
 }
 
 .sidebar .name {
@@ -90,6 +105,7 @@ body {
   font-size: 1.25rem;
 }
 
+.sidebar .description,
 .sidebar .role,
 .sidebar .where {
   margin: 0.15rem 0;

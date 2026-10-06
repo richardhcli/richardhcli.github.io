@@ -6,13 +6,13 @@ enableRobotsTXT = true
 disableKinds = ["taxonomy", "term"]
 
 [params]
-  description = "Richard Li. Machine learning architecture."
-  role = "ML Engineer · Firmware Tinkerer · EE Builder"
+  description = "Machine learning architecture Enthusiast"
+  role = "EE + CS B.S."
   location = "West Lafayette, Indiana"
   email = "richardhcli@gmail.com"
   github = "https://github.com/richardhcli"
   linkedin = "https://www.linkedin.com/in/richardhcli"
-  resume = "https://drive.google.com/file/d/1nKXqQy7LzwMQU_mMiYjSvF6az85v4pTR/view?usp=drive_link"
+  resume = "/resume/"
 
 [markup]
   [markup.goldmark]
@@ -22,9 +22,23 @@ disableKinds = ["taxonomy", "term"]
     style = "dracula"
     noClasses = true
 
-[permalinks]
-  blog = "/blog/:slug/"
-  projects = "/projects/:slug/"
+[[permalinks]]
+  pattern = "/resume/"
+  [permalinks.target]
+    kind = "page"
+    path = "/resume"
+
+[[permalinks]]
+  pattern = "/blog/:slug/"
+  [permalinks.target]
+    kind = "page"
+    path = "/blog/**"
+
+[[permalinks]]
+  pattern = "/projects/:slug/"
+  [permalinks.target]
+    kind = "page"
+    path = "/projects/**"
 
 [outputs]
   home = ["HTML", "RSS"]

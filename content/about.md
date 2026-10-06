@@ -41,4 +41,4 @@ I'd love to chat.
 - Email: [richardhcli@gmail.com](mailto:richardhcli@gmail.com)
 - [LinkedIn](https://www.linkedin.com/in/richardhcli)
 - [GitHub](https://github.com/richardhcli)
-- [Resume (PDF)](https://drive.google.com/file/d/1nKXqQy7LzwMQU_mMiYjSvF6az85v4pTR/view?usp=drive_link)
+- [Resume (PDF)](/resume/)
