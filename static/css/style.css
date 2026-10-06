@@ -1,20 +1,20 @@
 :root {
   color-scheme: light;
-  --bg: #f6f5f2;
-  --fg: #282a36;
-  --muted: #5c6072;
-  --link: #0b7285;
-  --accent: #6d4ea3;
-  --code: #e6e3ee;
-  --pre: #efeef4;
-  --scrollbar: #c4c0d0;
+  --bg: #f7f4ec;
+  --fg: #2c2b28;
+  --muted: #6a675c;
+  --link: #036a96;
+  --accent: #5b4a8a;
+  --code: #ebe6dc;
+  --pre: #f0ebe2;
+  --scrollbar: #c8c2b4;
 }
 
 html[data-theme="dark"] {
   color-scheme: dark;
   --bg: #282a36;
   --fg: #f8f8f2;
-  --muted: #b8bdd4;
+  --muted: #a8adc4;
   --link: #8be9fd;
   --accent: #bd93f9;
   --code: #44475a;
@@ -31,7 +31,8 @@ body {
   overflow: hidden;
   color: var(--fg);
   background: var(--bg);
-  font: 1.0625rem/1.7 Georgia, "Iowan Old Style", Palatino, "Palatino Linotype", serif;
+  font: 400 1.05rem/1.75 "Source Sans 3", "Segoe UI", sans-serif;
+  letter-spacing: 0.01em;
 }
 
 .shell {
@@ -103,6 +104,8 @@ body {
 .sidebar .name {
   margin: 0.9rem 0 0.15rem;
   font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 .sidebar .description,
@@ -128,7 +131,8 @@ nav {
   flex-wrap: wrap;
   gap: 1.25rem;
   margin-bottom: 2rem;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
 }
 
 main {
@@ -137,7 +141,7 @@ main {
   max-width: none;
   min-width: 0;
   min-height: 0;
-  font-size: 1.25rem;
+  font-size: 1.08rem;
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
@@ -259,7 +263,7 @@ a { color: var(--link); }
 a:hover { color: var(--accent); }
 
 h1, h2, h3, h4 {
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.3;
 }
 
@@ -282,7 +286,7 @@ ul.posts li { margin: 0 0 2.75rem; }
 ul.posts time { display: block; font-size: 0.8em; }
 ul.posts .item-title {
   display: block;
-  font-size: 1.45em;
+  font-size: 1.2em;
   line-height: 1.3;
   margin: 0.15rem 0 0.1rem;
 }
