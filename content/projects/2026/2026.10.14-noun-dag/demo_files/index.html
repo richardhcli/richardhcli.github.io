@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Noun Lattice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+<header class="bar">
+  <label for="q" class="visually-hidden">Search nouns</label>
+  <input id="q" type="search" placeholder="Search 71,864 noun meanings" autocomplete="off" spellcheck="false" disabled>
+  <ol id="results" class="results" hidden></ol>
+</header>
+<section class="graph" aria-label="Graph of the selected meaning and its neighbours">
+  <canvas id="graph" role="img" aria-label="Directed graph: the selected meaning, its ancestors, children and similar siblings. The same links are listed in the text panel."></canvas>
+  <div class="graph-top">
+    <ul class="legend">
+      <li><span class="dot focus"></span>Selected</li>
+      <li><span class="dot ancestor"></span>Is a</li>
+      <li><span class="dot child"></span>Can be a</li>
+      <li><span class="dot sibling"></span>Similar</li>
+    </ul>
+    <div class="graph-controls">
+      <label class="toggle" for="show-siblings"><input id="show-siblings" type="checkbox" checked> Similar</label>
+      <button id="fit" class="more" type="button">Fit</button>
+    </div>
+  </div>
+  <p class="graph-hint">Arrows point from a meaning to what it can be. Tap a node to open it; drag to move, scroll or pinch to zoom.</p>
+  <div id="graph-tip" class="tip" hidden></div>
+</section>
+<div class="panel" id="panel">
+<main id="main">
+  <p id="status" class="status">Loading the noun graph…</p>
+  <article id="node" hidden>
+    <p class="eyebrow">Noun meaning · <span id="node-id" class="mono"></span></p>
+    <h1 id="node-key"></h1>
+    <p id="node-def" class="definition"></p>
+    <p id="node-aliases" class="aliases" hidden></p>
+    <p id="node-qual" class="qual" hidden></p>
+
+    <section aria-labelledby="h-parents">
+      <h2 id="h-parents">Is a <span id="parents-count" class="count"></span></h2>
+      <ol id="trails" class="trails"></ol>
+      <button id="more-trails" class="more" type="button" hidden></button>
+    </section>
+
+    <section aria-labelledby="h-children">
+      <h2 id="h-children">Can be a <span id="children-count" class="count"></span></h2>
+      <label for="child-filter" class="visually-hidden">Filter children</label>
+      <input id="child-filter" class="filter" type="search" placeholder="Filter" hidden>
+      <ul id="children" class="list"></ul>
+      <p id="no-children" class="empty" hidden>No narrower meanings. This is a leaf.</p>
+      <button id="more-children" class="more" type="button" hidden></button>
+    </section>
+
+    <section aria-labelledby="h-siblings">
+      <h2 id="h-siblings">Similar meanings</h2>
+      <div id="siblings"></div>
+      <p id="no-siblings" class="empty" hidden>No siblings: nothing else shares this parent.</p>
+    </section>
+  </article>
+</main>
+<footer class="foot">
+  <p>Meanings, definitions and hierarchy from <a href="https://en-word.net/" target="_blank" rel="noopener">Open English WordNet 2025</a>, CC BY 4.0. Sense counts from Princeton WordNet 3.0, WordNet License. <a href="NOTICE.txt" target="_blank" rel="noopener">Notice</a>.</p>
+  <p class="mono">Build <span id="version">–</span></p>
+</footer>
+</div>
+</div>
+<script src="graph.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

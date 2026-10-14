@@ -2,6 +2,8 @@
 
 Personal site, built with [Hugo](https://gohugo.io/).
 
+Live at richardhcli.com
+
 ## Vision
 
 Cut the noise. The site should be as basic as it can be. The only content that matters is the text.
