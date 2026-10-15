@@ -44,15 +44,16 @@ disableKinds = ["taxonomy", "term"]
   home = ["HTML", "RSS"]
   section = ["HTML", "RSS"]
 
-# Hugo rejects HTML under content. Serve the noun-dag demo as static files beside its project page.
+# Hugo rejects HTML under content. A note's demo/ folder is copied out as static files.
 [module]
   [[module.mounts]]
     source = "content"
     target = "content"
-    files = ["! **/2026.10.14-noun-dag/demo_files/**"]
+    files = ["! **/demo/**"]
+  [[module.mounts]]
+    source = "content"
+    target = "static"
+    files = ["**/demo/**"]
   [[module.mounts]]
     source = "static"
     target = "static"
-  [[module.mounts]]
-    source = "content/projects/2026/2026.10.14-noun-dag/demo_files"
-    target = "static/projects/noun-dag/demo_files"

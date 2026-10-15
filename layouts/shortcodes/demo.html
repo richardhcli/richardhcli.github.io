@@ -1,0 +1,7 @@
+{{- $url := partial "demo-url.html" .Page -}}
+{{- with $url }}
+<figure class="demo-preview">
+  <iframe src="{{ . }}" title="{{ $.Page.Title }} demo" loading="lazy"></iframe>
+  <p><a href="{{ . }}">Full screen</a></p>
+</figure>
+{{- end }}

@@ -1,0 +1,8 @@
+{{- with .Params.demo_url }}{{ return . }}{{ end -}}
+{{- with .File -}}
+  {{- $dir := replace .Dir "\\" "/" -}}
+  {{- if os.FileExists (printf "content/%sdemo/index.html" $dir) -}}
+    {{- return (relURL (printf "%s/" (path.Join $dir "demo"))) -}}
+  {{- end -}}
+{{- end -}}
+{{- return "" -}}

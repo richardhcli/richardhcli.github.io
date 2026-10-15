@@ -63,6 +63,21 @@ Put them next to `index.md` and refer to them by name:
 {{< video "demo.mp4" >}}
 ```
 
+## Demos
+
+A runnable app goes in a folder named `demo` next to `index.md`, with `index.html` as its entry point. Hugo copies that folder as static files, so the app is a full page at the note's content path. For this note, that is `/projects/2026/2026.10.14-noun-dag/demo/`. The writeup URL stays the slug, `/projects/noun-dag/`.
+
+```
+content/projects/2026/2026.10.14-noun-dag/
+  index.md
+  demo/
+    index.html
+```
+
+The project page links that page as Demo. In the writeup, `{{< demo >}}` adds a small preview and a Full screen link to the same page.
+
+`demo_url` in front matter points the Demo link at an external host instead, and the preview follows it. Leave `demo_url` as `""` to use the `demo` folder.
+
 ## Front matter
 
 ```yaml
@@ -74,7 +89,7 @@ tags: []
 draft: true
 ```
 
-Project notes also have `github_url` and `demo_url`. Leave either one as `""` and that link is omitted.
+Project notes also have `github_url` and `demo_url`. Leave either one as `""` and that link is omitted, unless the note has a `demo` folder, which supplies the Demo link.
 
 Tags are a list. They show under the note on Blog and Projects, and next to the date on the note itself.
 

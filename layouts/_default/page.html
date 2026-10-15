@@ -1,6 +1,13 @@
 {{ define "main" }}
 <article>
   <h1>{{ .Title }}</h1>
+  {{- $demo := partial "demo-url.html" . -}}
+  {{ if or .Params.github_url $demo }}
+  <p class="meta">
+    {{- with .Params.github_url }}<a href="{{ . }}">GitHub</a>{{ end -}}
+    {{- with $demo }}{{ if $.Params.github_url }} · {{ end }}<a href="{{ . }}">Demo</a>{{ end -}}
+  </p>
+  {{ end }}
   {{ .Content }}
 </article>
 {{ end }}
