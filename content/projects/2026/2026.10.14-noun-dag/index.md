@@ -9,4 +9,6 @@ demo_url: ""
 draft: false
 ---
 
-<iframe class="demo" src="demo_files/index.html" title="Dag of nouns"></iframe>
+A graph of noun meanings from Open English WordNet. Search a meaning, then follow what it is, what it can be, and the meanings that sit beside it.
+
+{{< demo >}}
