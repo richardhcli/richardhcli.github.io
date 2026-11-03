@@ -6,7 +6,7 @@ slug: poker
 tags: []
 github_url: ""
 demo_url: ""
-draft: true
+draft: false
 ---
 
 
